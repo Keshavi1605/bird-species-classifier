@@ -4,5 +4,7 @@ __pycache__/
 .env
 .venv/
 venv/
-models/
+models/*
+!models/bird_classifier.pt
+!models/labels.json
 data/

@@ -46,16 +46,17 @@ docker run --rm -p 7860:7860 -v "$(pwd)/models:/app/models" bird-classifier-app
 
 1. Create a new **Gradio** Space.
 2. Push this code (without large dataset).
-3. Provide model one of two ways:
-   - commit `models/bird_classifier.pt` (if you want it in repo), or
-   - set `MODEL_URL` in Space variables to a direct download link for your model.
-4. Space auto-builds and gives a public URL.
+3. This repo is configured to include:
+   - `models/bird_classifier.pt`
+   - `models/labels.json`
+4. Optional alternative: set `MODEL_URL` in Space variables to download model at startup.
+5. Space auto-builds and gives a public URL.
 
 ## Option B: Render (Docker)
 
 1. Push this repo to GitHub.
 2. In Render, create service from repo using `render.yaml`.
-3. Set `MODEL_URL` env var in Render (or include model in image/repo).
+3. If model is not committed, set `MODEL_URL` in Render.
 4. Deploy.
 
 ## 4) Push to GitHub
