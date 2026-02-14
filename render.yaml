@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: bird-species-classifier
+    env: docker
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: MODEL_URL
+        sync: false
+      - key: MODEL_PATH
+        value: /app/models/bird_classifier.pt
+      - key: MIN_TOP1_CONF
+        value: "0.70"
+      - key: MIN_MARGIN
+        value: "0.20"
